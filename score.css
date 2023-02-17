@@ -1,0 +1,48 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+#highScores {
+	width:300px;
+	padding-bottom: 15px;
+	padding-top: 15px;
+	display: block;
+	margin: 50px auto;
+}
+
+#score {
+	font-size: 1.25em;
+	margin: 15px 0;
+	color: #fdea59;
+	text-align: center;
+}
+
+#start-button {
+	background: url('./assets/startGame.jpg');
+	background-repeat: no-repeat;
+	background-size: 300px auto;
+	border: none;
+	display: block;
+	margin: 150px auto;
+	height: 55px;
+	width: 300px;
+	cursor: pointer;
+}
+
+
+/* BACKGROUND */
+
+#starBackground {
+	position: absolute;
+	width:100%;
+	height:100%;
+	z-index:-1;
+}
