@@ -88,7 +88,7 @@ function uranusCollision(p, u){
 		&& u.y - u.r < p.y + p.r && u.y + u.r > p.y - p.r){
 		var score = endTime();
 		localStorage.setItem("score", score)
-        window.location.href="score.html";
+        window.location.href="../score/score.html";
 }
 };
 
