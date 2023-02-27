@@ -65,8 +65,8 @@ function setUpCanvas () {
 function createStars (n) {
 	for(let i = 0; i < n; i++){
 		allStars.push({
-			"x": randi(0,1000),
-			"y": randi(0,600),
+			"x": randi(0, width),
+			"y": randi(0, height),
 			"radius": 1,
 			"colour": 60,
 			"pulse": 0.01,
