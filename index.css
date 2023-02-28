@@ -42,31 +42,6 @@ body {
 	display: block; 
 }
 
-#mobile {
-	display: none;
-	position: absolute;
-	z-index: 2;
-	top: 0;
-	width: 100vw;
-	height: 100vh;
-	padding: 20px;
-	flex-flow: column nowrap;
-	align-items: center;
-	justify-content: center;
-	gap: 60px;
-}
-
-#mobile-logo {
-	width: 100%;
-}
-
-#mobile-text {
-	font-size: 1.25em;
-	color: #fdea59;
-	text-align: center;
-}
-
-
 /* BACKGROUND */
 
 #star-background {
@@ -80,11 +55,6 @@ body {
 
 /* RESPONSIVE */
 
-@media only screen and (max-width: 1050px) {
-	#mobile {
-		display: flex;
-	}
-	#menu {
-		display: none;
-	}
-}
+/* @media only screen and (max-width: 1050px) {
+
+} */
