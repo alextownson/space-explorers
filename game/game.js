@@ -11,7 +11,9 @@ window.addEventListener('load', () => {
 	if(typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){		
 		DeviceOrientationEvent.requestPermission()
 			.catch(() => {
+				// show permission dialogue only on first visit
 				let button = document.createElement('button');
+				button.style.height = innerHeight + 100 + 'px';
 				button.classList.add('button');
 				button.innerText = 'ALLOW ACCESS TO SENSORS'
 				button.addEventListener('click', requestAccess);
@@ -19,6 +21,7 @@ window.addEventListener('load', () => {
 				throw error;
 			})
 			.then(() => {
+				// subsequent visits
 				permissionGranted = true;
 			})
 	}
@@ -28,7 +31,7 @@ window.addEventListener('load', () => {
 		.then(response => {
 			if(response == 'granted') {
 				permissionGranted = true;
-			} else{
+			} else {
 				permissionGranted = false;
 			}
 		})

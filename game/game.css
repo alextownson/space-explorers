@@ -52,27 +52,28 @@ canvas {
 	border: solid 1px #fdea59;
 }
 
-/* TEST */
+/* ACCESS TO SENSORS */
 
-button.button{
+.button{
     position: absolute;
-    z-index: 0;
+    z-index: 1;
     top: 50%;
     left: 50%;
 	color: black;
     transform: translate(-50%, -50%);
-	font-size: 1em;	
-	height: 100vh;
+	font-size: 1.25em;	
 	width: 100vw;
-	line-height: 25px;
+	line-height: 1.4em;
 	text-decoration: underline;
 }
-
 
 /* RESPONSIVE */
 
 @media only screen and (max-width: 1050px) {
 	#game-logo-button {
 		display: none;
+	}
+	canvas {
+		border: none;
 	}
 }
