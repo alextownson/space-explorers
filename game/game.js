@@ -101,7 +101,6 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	function setUpCanvas () {
 		canvas = document.querySelector('#myCanvas');
 		context = canvas.getContext('2d');
-		canvas.style.border = '1px solid gold';
 		canvas.width = width;
 		canvas.height = height;
 	}
