@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 			.catch(() => {
 				// show permission dialogue only on first visit
 				let button = document.createElement('button');
-				button.style.height = innerHeight + 100 + 'px';
+				button.style.height = innerHeight + 200 + 'px';
 				button.classList.add('button');
 				button.innerText = 'ALLOW ACCESS TO SENSORS'
 				button.addEventListener('click', requestAccess);
