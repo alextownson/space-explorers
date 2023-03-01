@@ -1,8 +1,8 @@
-import { setUpCanvas, createStars, animationLoop } from "../modules/stars.js";
+import { backgroundStars } from '../modules/stars.js';
 
-setUpCanvas();
-createStars(100);
-animationLoop();
+backgroundStars()
+
+window.addEventListener('resize', backgroundStars)
 
 let time = localStorage.getItem("score")
 let score = document.querySelector("#score")
