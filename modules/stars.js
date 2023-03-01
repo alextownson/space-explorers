@@ -19,41 +19,45 @@ function backgroundStars () {
 				{
 					x: randi(0, width),
 					y: randi(0, height),
-					r: 1,
-					c: 60,
-					ax: 0.01,
-					a: randi(0.1, 1),
+					radius: 1,
+					colour: 60,
+					pulse: 0.01,
+					alpha: randi(0.1, 1),
 					angle: randi(0, 360),
-					changle: 0.5, 
-					randangle: function() {return randn(20)},
-					d: 0.2
+					changeAngle: 0.5, 
+					randomAngle: function() {return randn(20)},
+					degree: 0.2
 				}
 			)
 		}
 	}
 
-	function updateStars (o){
-		let cx;
-		let sy;
-		let onedegree = 2 * Math.PI / 360;
-		cx = o.d * Math.cos(o.angle * onedegree);
-		sy = o.d * Math.sin(o.angle * onedegree);
-		o.x += cx;
-		o.y += sy;
-		o.angle += o.changle;
-		o.a += o.ax;
-		if(o.a > 1){o.ax = -0.01}
-		if(o.a < 0){o.ax = 0.01}
+	function updateStars (star){
+		let cosX;
+		let sinY;
+		let oneDegree = 2 * Math.PI / 360;
+		cosX = star.degree * Math.cos(star.angle * oneDegree);
+		sinY = star.degree * Math.sin(star.angle * oneDegree);
+		star.x += cosX;
+		star.y += sinY;
+		star.angle += star.changeAngle;
+		star.alpha += star.pulse;
+		if (star.alpha > 1) {
+			star.pulse = -0.01
+		}
+		if (star.alpha < 0) {
+			star.pulse = 0.01
+		}
 	}
 
 	function clear(){
 		context.clearRect(0, 0, width, height);
 	}
 
-	function stars (o){ 
+	function stars (star){ 
 		context.beginPath();
-		context.arc(o.x, o.y, o.r, 0, 2*Math.PI);
-		context.fillStyle = 'hsla('+o.c+', 100%, 50%, '+o.a+')';
+		context.arc(star.x, star.y, star.radius, 0, 2*Math.PI);
+		context.fillStyle = 'hsla('+star.colour+', 100%, 50%, '+star.alpha+')';
 		context.fill();
 	}
 
