@@ -17,16 +17,16 @@ function backgroundStars () {
 		for(let i = 0; i < numberOfStars; i++){
 			allStars.push(
 				{
-					"x": randi(0, width),
-					"y": randi(0, height),
-					"r": 1,
-					"c": 60,
-					"ax": 0.01,
-					"a": randi(0.1, 1),
-					"angle": randi(0, 360),
-					"changle": 0.5, 
-					"randangle": function() {return randn(20)},
-					"d": 0.2
+					x: randi(0, width),
+					y: randi(0, height),
+					r: 1,
+					c: 60,
+					ax: 0.01,
+					a: randi(0.1, 1),
+					angle: randi(0, 360),
+					changle: 0.5, 
+					randangle: function() {return randn(20)},
+					d: 0.2
 				}
 			)
 		}
@@ -53,7 +53,7 @@ function backgroundStars () {
 	function stars (o){ 
 		context.beginPath();
 		context.arc(o.x, o.y, o.r, 0, 2*Math.PI);
-		context.fillStyle = "hsla("+o.c+", 100%, 50%, "+o.a+")";
+		context.fillStyle = 'hsla('+o.c+', 100%, 50%, '+o.a+')';
 		context.fill();
 	}
 
@@ -68,9 +68,9 @@ function backgroundStars () {
 	}
 
 	function setUpCanvas() {
-		const canvas = document.querySelector("#star-background");
-		context = canvas.getContext("2d");
-		canvas.style.border = "none";
+		const canvas = document.querySelector('#star-background');
+		context = canvas.getContext('2d');
+		canvas.style.border = 'none';
 		canvas.width = width;
 		canvas.height = height;
 	}

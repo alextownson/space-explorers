@@ -38,7 +38,7 @@ window.addEventListener('load', () => {
 	}
 })
 
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
 	if(window.innerWidth < 1050) {
 		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 150)
 	} else if (window.innerWidth > 1050){
@@ -53,31 +53,31 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	let context;
 	const allStars = [];
 	const uranus = {
-		"x": width / 10,
-		"y": height - 60,
-		"radius": 25,
-		"colour": 180,
-		"pulse": 0.01,
-		"alpha": 0.7,
+		x: width / 10,
+		y: height - 60,
+		radius: 25,
+		colour: 180,
+		pulse: 0.01,
+		alpha: 0.7,
 	};
 	let playerSize = 30;
 	let playerMove = 5;
 	let playerTurn = 360;
 	let friction = 0.7;
 	const player = {
-		"x" : width / 2,
-		"y" : height / 2,
-		"radius" : playerSize / 2,
-		"angle" : 90/180 * Math.PI,
-		"rotation": 0, 
-		"moving": false, 
-		"move": {
-			"x": 0, 
-			"y": 0
+		x: width / 2,
+		y: height / 2,
+		radius: playerSize / 2,
+		angle: 90/180 * Math.PI,
+		rotation: 0, 
+		moving: false, 
+		move: {
+			x: 0, 
+			y: 0
 		}
 	};
 	let lives = 3;
-	const restartButton = document.querySelector("#restart-button")
+	const restartButton = document.querySelector('#restart-button')
 	let startTime = (new Date).getTime();
 
 	// RANDOM NUMBER GENERATOR FUNCTIONS
@@ -85,11 +85,6 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	function randn (n) {
 		let r = Math.random() * n - (n / 2);
 		return r 
-	}
-
-	function rand (n) {
-		let r = Math.random() * n;
-		return r
 	}
 
 	function randi (min, max) {
@@ -100,9 +95,9 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	// DRAW CANVAS
 
 	function setUpCanvas () {
-		canvas = document.querySelector("#myCanvas");
-		context = canvas.getContext("2d");
-		canvas.style.border = "1px solid gold";
+		canvas = document.querySelector('#myCanvas');
+		context = canvas.getContext('2d');
+		canvas.style.border = '1px solid gold';
 		canvas.width = width;
 		canvas.height = height;
 	}
@@ -112,16 +107,16 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	function createStars (n) {
 		for(let i = 0; i < n; i++){
 			allStars.push({
-				"x": randi(0, width),
-				"y": randi(0, height),
-				"radius": 1,
-				"colour": 60,
-				"pulse": 0.01,
-				"alpha": randi(0.1, 1),
-				"angle": randi(0, 360),
-				"changeAngle": 0.5, 
-				"randomAngle": function() {return randn(20)},
-				"degree": 0.2
+				x: randi(0, width),
+				y: randi(0, height),
+				radius: 1,
+				colour: 60,
+				pulse: 0.01,
+				alpha: randi(0.1, 1),
+				angle: randi(0, 360),
+				changeAngle: 0.5, 
+				randomAngle: function() {return randn(20)},
+				degree: 0.2
 			})
 		}
 	}
@@ -131,7 +126,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	function drawCelestialObjects (celestialObjects) { 
 		context.beginPath();
 		context.arc(celestialObjects.x, celestialObjects.y, celestialObjects.radius, 0, 2 * Math.PI);
-		context.fillStyle = "hsla("+celestialObjects.colour+", 100%, 50%, "+celestialObjects.alpha+")";
+		context.fillStyle = 'hsla('+celestialObjects.colour+', 100%, 50%, '+celestialObjects.alpha+')';
 		context.fill();
 	}
 
@@ -150,7 +145,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 			context.lineTo(x, y);
 			wormholeCollision(this);
 		}
-		context.strokeStyle = "white";
+		context.strokeStyle = 'white';
 		context.stroke();
 	};
 
@@ -160,7 +155,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	// https://www.youtube.com/watch?v=e1vKcPZT8Lc&t=1348s
 
 	function drawPlayer () {
-		context.strokeStyle = "pink";
+		context.strokeStyle = 'pink';
 		context.lineWidth = playerSize/20;
 		context.beginPath();
 		// NOSE
@@ -212,8 +207,8 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	// https://www.w3schools.com/graphics/canvas_text.asp
 
 	function life () {
-		context.font = "18px helvetica";
-		context.fillText("Lives: " + lives, width - 75, 20);
+		context.font = '1.25em helvetica';
+		context.fillText('Lives: ' + lives, width - 75, 20);
 	};
 
 	// UPDATE PLANET
@@ -280,8 +275,8 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 			let score = time();
 			// Accessing a variable in a different js file: 
 			// https://stackoverflow.com/questions/27355397/how-to-get-variable-value-from-another-js-file
-			localStorage.setItem("score", score)
-			window.location.href="../score/score.html";
+			localStorage.setItem('score', score)
+			window.location.href='../score/score.html';
 		}
 	};
 
@@ -350,8 +345,8 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	// GAME OVER
 
 	function gameOver () {
-		canvas.style.display = "none"
-		restartButton.style.display = "block";
+		canvas.style.display = 'none'
+		restartButton.style.display = 'block';
 	};
 
 	// ANIMATE CANVAS
@@ -375,8 +370,8 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 
 	setUpCanvas();
 	createStars(100);
-	document.addEventListener("keydown", keyDown);
-	document.addEventListener("keyup", keyUp);
+	document.addEventListener('keydown', keyDown);
+	document.addEventListener('keyup', keyUp);
 	canvas.addEventListener('touchstart', touchStart);
 	canvas.addEventListener('touchend', touchEnd);
 	window.addEventListener('devicemotion', mobileTurn)

@@ -4,18 +4,18 @@ backgroundStars()
 
 window.addEventListener('resize', backgroundStars)
 
-let time = localStorage.getItem("score")
-let score = document.querySelector("#score")
+let time = localStorage.getItem('score')
+let score = document.querySelector('#score')
 
 highScore();
 
 function highScore(){
-let playerName = prompt("Player Name:");
+let playerName = prompt('Player name:');
  if (playerName != null && /^[A-Za-z\s]*$/.test(playerName) && playerName.length < 10) {
-    score.innerHTML = playerName + " got to Uranus in " + time + " seconds!";
-    score.style.display = "block";
+    score.innerHTML = playerName + ' got to Uranus in ' + time + ' seconds!';
+    score.style.display = 'block';
 } else {
-    score.innerHTML = "You got to Uranus in " + time + " seconds!";
-    score.style.display = "block";
+    score.innerHTML = 'You got to Uranus in ' + time + ' seconds!';
+    score.style.display = 'block';
 }
 };

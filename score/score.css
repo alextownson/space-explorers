@@ -10,7 +10,7 @@ body {
 	overflow: hidden;
 }
 
-#highScores {
+#high-scores {
 	width: 500px;
 	padding-bottom: 15px;
 	display: block;
@@ -56,7 +56,7 @@ body {
 }
 
 @media only screen and (max-width: 1050px) {
-	#highScores {
+	#high-scores {
 		width: 100%;
 		margin-top: 20px;
 	}
