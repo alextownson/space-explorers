@@ -17,6 +17,8 @@ body {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
+	padding: 20px 10px;
+	gap: 100px;
 }
 
 #game-logo {
@@ -24,20 +26,24 @@ body {
 }
 
 #game-description {
-	color: #fdea59;
+	width: 50%;
+	background-color: #fdea59;
+	border-radius: 20px;
+	padding: 20px 40px;
 	font-size: 1.25em;
 	line-height: 2em;
 	text-align: center;
-	margin: 100px;
 }
 
 #start-button {
 	border: none;
-	background: url('./assets/startGame.jpg');
-	background-size: 400px auto;
-	background-repeat: no-repeat;
-	width: 400px;
-	height: 60px;
+	font-size: 1.25em;
+	font-weight: 700;
+	color: black;
+	background-color: #fdea59;
+	box-shadow: 0px 10px #ee6ea1 inset;
+	border-radius: 20px;
+	padding: 30px 40px 20px;
 	cursor: pointer;
 	display: block; 
 }
@@ -55,6 +61,20 @@ body {
 
 /* RESPONSIVE */
 
-/* @media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 1050px) {
+	#menu {
+		justify-content: start;
+		gap: 30px;
+	}
+	
+	#game-logo {
+		width: 100%;
+	}
 
-} */
+	#game-description {
+		width: 100%;
+		line-height: 1.3em;
+		margin: 10px;
+		padding: 20px 20px;
+	}
+}

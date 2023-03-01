@@ -11,30 +11,39 @@ body {
 }
 
 #highScores {
-	width:300px;
+	width: 500px;
 	padding-bottom: 15px;
-	padding-top: 15px;
 	display: block;
-	margin: 50px auto;
+	margin: 65px auto;
 }
 
 #score {
+	display: none;
 	font-size: 1.25em;
-	margin: 15px 0;
-	color: #fdea59;
+	margin: 15px auto;
+	color: black;
 	text-align: center;
+	background-color: #fdea59;
+	border-radius: 20px;
+	padding: 20px 40px;
+	width: fit-content;
 }
 
 #start-button {
-	background: url('../assets/startGame.jpg');
-	background-repeat: no-repeat;
-	background-size: 300px auto;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 	border: none;
-	display: block;
-	margin: 150px auto;
-	height: 55px;
-	width: 300px;
+	font-size: 1.25em;
+	font-weight: 700;
+	color: black;
+	background-color: #fdea59;;
+	box-shadow: 0px 10px #ee6ea1 inset;
+	border-radius: 20px;
+	padding: 30px 40px 20px;
 	cursor: pointer;
+	display: block; 
 }
 
 
@@ -47,4 +56,18 @@ body {
 	width:100%;
 	height:100%;
 	z-index:-1;
+}
+
+@media only screen and (max-width: 1050px) {
+	#highScores {
+		width: 100%;
+		margin-top: 20px;
+	}
+	#start-button {
+		width: 225px;
+		padding: 30px 30px 20px;
+	}
+	#score {
+		padding: 20px 25px;
+	}
 }

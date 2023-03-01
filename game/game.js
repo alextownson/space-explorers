@@ -3,7 +3,7 @@ let permissionGranted = false;
 window.addEventListener('load', () => {
 
 	if(window.innerWidth < 1050) {
-		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 140)
+		makeGame(window.innerWidth - 2, window.innerHeight -2, 10, 16, 40, 140)
 	} else if (window.innerWidth > 1050){
 		makeGame(1000, 500, 20, 10, 30, 200)
 	}
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener("resize", () => {
 	if(window.innerWidth < 1050) {
-		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 150)
+		makeGame(window.innerWidth - 2, window.innerHeight - 2, 10, 16, 40, 150)
 	} else if (window.innerWidth > 1050){
 		makeGame(1000, 500, 20, 10, 30, 200)
 	}
@@ -77,7 +77,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 		}
 	};
 	let lives = 3;
-	const gameOverButton = document.querySelector("#gameOver-button")
+	const restartButton = document.querySelector("#restart-button")
 	let startTime = (new Date).getTime();
 
 	// RANDOM NUMBER GENERATOR FUNCTIONS
@@ -135,12 +135,12 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 		context.fill();
 	}
 
-	// DRAW MAZE
+	// DRAW WORMHOLE
 
 	// Drawing a spiral: 
 	// https://stackoverflow.com/questions/6824391/drawing-a-spiral-on-an-html-canvas-using-javascript
 
-	function drawMaze () {
+	function drawWormhole () {
 		context.moveTo(width / 2, height / 2);
 		context.beginPath();
 		for (i = 0; i < wormholeSpirals; i++) {
@@ -148,7 +148,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 			x = width / 2 + (wormholeW + wormholeX * angle) * Math.cos(angle);
 			y = height / 2 + (wormholeW + wormholeY * angle) * Math.sin(angle);
 			context.lineTo(x, y);
-			mazeCollision(this);
+			wormholeCollision(this);
 		}
 		context.strokeStyle = "white";
 		context.stroke();
@@ -246,9 +246,9 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 		}
 	}
 
-	// MAZE COLLISION
+	// WORMHOLE COLLISION
 
-	function mazeCollision () {
+	function wormholeCollision () {
 		if (
 			x < player.x + player.radius &&
 			x > player.x - player.radius &&
@@ -351,7 +351,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 
 	function gameOver () {
 		canvas.style.display = "none"
-		gameOverButton.style.display = "block";
+		restartButton.style.display = "block";
 	};
 
 	// ANIMATE CANVAS
@@ -365,7 +365,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 		drawCelestialObjects(uranus);
 		updatePlanet();
 		planetCollision();
-		drawMaze();
+		drawWormhole();
 		drawPlayer();
 		life();
 		requestAnimationFrame(animationLoop);
