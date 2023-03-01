@@ -1,4 +1,5 @@
 let permissionGranted = false;
+document.body.style.height = innerHeight + 'px';
 
 window.addEventListener('load', () => {
 

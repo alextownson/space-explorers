@@ -73,6 +73,12 @@ canvas {
 	#game-logo-button {
 		display: none;
 	}
+	
+	#restart-button {
+		width: 225px;
+		padding: 30px 30px 20px;
+	}
+
 	canvas {
 		border: none;
 	}
