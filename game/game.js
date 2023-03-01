@@ -322,7 +322,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 
 	// MOTION EVENTS 
 
-	function mobileTurn () {
+	function mobileTurn (event) {
 		let x = Math.trunc(event.accelerationIncludingGravity.x);
 		player.rotation = -x/150;
 	 };
