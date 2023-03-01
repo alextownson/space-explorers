@@ -3,7 +3,7 @@ let permissionGranted = false;
 window.addEventListener('load', () => {
 
 	if(window.innerWidth < 1050) {
-		makeGame(window.innerWidth - 2, window.innerHeight -2, 10, 16, 40, 140)
+		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 140)
 	} else if (window.innerWidth > 1050){
 		makeGame(1000, 500, 20, 10, 30, 200)
 	}
@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
 
 window.addEventListener("resize", () => {
 	if(window.innerWidth < 1050) {
-		makeGame(window.innerWidth - 2, window.innerHeight - 2, 10, 16, 40, 150)
+		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 150)
 	} else if (window.innerWidth > 1050){
 		makeGame(1000, 500, 20, 10, 30, 200)
 	}
