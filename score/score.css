@@ -10,17 +10,25 @@ body {
 	overflow: hidden;
 }
 
+main {
+	width: 100%;
+	min-height: 480px;
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	gap: 100px;
+}
+
 #high-scores {
-	width: 500px;
-	padding-bottom: 15px;
+	width: 550px;
 	display: block;
-	margin: 65px auto;
 }
 
 #score {
 	display: none;
 	font-size: 1.25em;
-	margin: 15px auto;
 	color: black;
 	text-align: center;
 	background-color: #fdea59;
@@ -29,8 +37,7 @@ body {
 	width: fit-content;
 }
 
-#start-button {
-	margin: 100px auto;
+#restart-button {
 	border: none;
 	font-size: 1.25em;
 	font-weight: 700;
@@ -55,10 +62,9 @@ body {
 	z-index:-1;
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (max-width: 590px) {
 	#high-scores {
 		width: 100%;
-		margin-top: 20px;
 	}
 	#start-button {
 		width: 225px;

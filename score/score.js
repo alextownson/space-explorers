@@ -1,11 +1,18 @@
 import { backgroundStars } from '../modules/stars.js';
 
+document.querySelector('main').style.height = window.innerHeight + 'px';
 backgroundStars()
 
-window.addEventListener('resize', backgroundStars)
+window.addEventListener('resize', () => {
+    backgroundStars()
+    document.querySelector('main').style.height = window.innerHeight + 'px';
+})
 
 let time = localStorage.getItem('score')
 let score = document.querySelector('#score')
+
+
+
 
 highScore();
 
