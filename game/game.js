@@ -45,14 +45,13 @@ window.addEventListener('load', () => {
 window.addEventListener('resize', () => {
 	if(window.innerWidth < 1050) {
 		makeGame(window.innerWidth, window.innerHeight, 10, 16, 40, 150)
-	} else if (window.innerWidth > 1050){
+	} else if (window.innerWidth > 1050 && document.querySelector('#canvas').width !== 1000){
 		makeGame(1000, 500, 20, 10, 30, 200)
 	}
 })
 
 function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpirals) {
 	// VARIABLES 
-
 	let canvas;
 	let context;
 	const allStars = [];
@@ -99,7 +98,7 @@ function makeGame(width, height, wormholeX, wormholeY, wormholeW, wormholeSpiral
 	// DRAW CANVAS
 
 	function setUpCanvas () {
-		canvas = document.querySelector('#myCanvas');
+		canvas = document.querySelector('#canvas');
 		context = canvas.getContext('2d');
 		canvas.width = width;
 		canvas.height = height;
