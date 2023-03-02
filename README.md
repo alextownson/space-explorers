@@ -1,6 +1,6 @@
 # Space Explorers
 
-![Triangle spaceship flying through a spiral maze with a glowing blue planet at the end.](/readme-assets/2019-spaceExplorers.gif)
+![Triangle spaceship flying through a spiral maze with a glowing blue planet at the end.](/assets/readme/2019-spaceExplorers.gif)
 
 [Space Explorers](https://alextownson.github.io/space-explorers/) is one of the first web projects I ever designed and developed. It is a maze game inspired by one of my favourite arcade games, Asteroids. 
 
@@ -10,7 +10,7 @@ When I started this project, I had only learned the bare minimum HTML and CSS to
 
 ## Space Explorers v2.0 (2023)
 
-[![Space Explorers being played on mobile](/readme-assets/space-explorers-demo.jpg)](https://vimeo.com/803889493)
+[![Space Explorers being played on mobile](/assets/readme/space-explorers-demo.jpg)](https://vimeo.com/803889493)
 
 In order to make Space Explorers work on mobile, I needed to make my design responsive and solve how the game controls would translate to a device without a mouse and keyboard. 
 
