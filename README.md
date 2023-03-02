@@ -10,6 +10,8 @@ When I started this project, I had only learned the bare minimum HTML and CSS to
 
 ## Space Explorers v2.0 (2023)
 
+[![Space Explorers being played on mobile](/readme-assets/space-explorers-demo.jpg)](https://vimeo.com/803889493)
+
 In order to make Space Explorers work on mobile, I needed to make my design responsive and solve how the game controls would translate to a device without a mouse and keyboard. 
 
 ### Device Motion
