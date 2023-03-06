@@ -3,13 +3,16 @@
 	<head>
 		<title>Space Explorers</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="A space exploration game.">
+  		<meta name="keywords" content="HTML canvas, JavaScript game">
+  		<meta name="author" content="Alex Townson">
 		<link rel="stylesheet" type="text/css" href="./game.css">
 		<link rel="icon" type="image/x-icon" href="../assets/space-explorers-favicon.png">
 		<script defer type="text/javascript" src="./game.js" ></script>
 	</head>
 	<body>
 		<main>
-			<button onclick="location.href='../index.html'" id="game-logo-button"></button>
+			<button onclick="location.href='../index.html'" id="game-logo-button" aria-label="Home"></button>
 			<button onclick="restart()" id="restart-button">RESTART GAME</button>
 			<canvas id="canvas" ></canvas>
 		</main>
